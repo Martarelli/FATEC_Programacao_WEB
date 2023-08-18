@@ -2,9 +2,9 @@
 
 class Conta
 {
-    private string $agencia;
-    private string $conta;
-    private float $saldo;
+    protected string $agencia;
+    protected string $conta;
+    protected float $saldo;
 
     public function __construct (float $valor){
         $this->agencia = "";
@@ -32,12 +32,16 @@ class Conta
 
 class ContaPoupanca extends Conta {
 
-    public function depositar(float $valor){
+    private float $rendimento;
+    private float $taxa = 10.00;
 
-    }
-
-    public function depositar(float $valor){
-
+    public function sacar(float $valor){
+        if (($this->saldo > 0) && ($this->saldo >= $valor))
+        {
+            $this->saldo -= $valor + $this->taxa;
+        } else {
+            echo "Saldo Insuficiente";
+        }
     }
   
 }
@@ -45,18 +49,26 @@ class ContaPoupanca extends Conta {
 class ContaCorrente extends Conta {
 
     private float $limite;
-    
+
     public function depositar(float $valor){
 
     }
 
-    public function depositar(float $valor){
+    public function sacar(float $valor){
 
     }
   
 }
 
+echo  "Conta <br>";
 $c1 = new Conta(1000);
+$c1->verSaldo();
+$c1->depositar(500);
+$c1->verSaldo();
+$c1->sacar(800);
+$c1->verSaldo();
+echo  "<br> Conta Poupança <br>";
+$c1 = new ContaPoupanca(1000);
 $c1->verSaldo();
 $c1->depositar(500);
 $c1->verSaldo();
