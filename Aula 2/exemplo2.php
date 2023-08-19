@@ -43,19 +43,23 @@ class ContaPoupanca extends Conta {
             echo "Saldo Insuficiente";
         }
     }
-  
 }
 
 class ContaCorrente extends Conta {
 
-    private float $limite;
-
-    public function depositar(float $valor){
-
-    }
+    private float $limite = 3000;
 
     public function sacar(float $valor){
+        if (($this->saldo > 0) && ($this->saldo + $this->limite >= $valor ))
+        {
+            $this->saldo -= $valor;
+        } else {
+            echo "Saldo Insuficiente";
+        }
+    }
 
+    public function verSaldo(){
+        echo "Saldo atual: " . $this->saldo + $this->limite . "<br>";
     }
   
 }
@@ -67,13 +71,22 @@ $c1->depositar(500);
 $c1->verSaldo();
 $c1->sacar(800);
 $c1->verSaldo();
+
 echo  "<br> Conta Poupança <br>";
-$c1 = new ContaPoupanca(1000);
-$c1->verSaldo();
-$c1->depositar(500);
-$c1->verSaldo();
-$c1->sacar(800);
-$c1->verSaldo();
+$c2 = new ContaPoupanca(2000);
+$c2->verSaldo();
+$c2->depositar(500);
+$c2->verSaldo();
+$c2->sacar(800);
+$c2->verSaldo();
+
+echo  "<br> Conta Corrente <br>";
+$c3 = new ContaCorrente(1000);
+$c3->verSaldo();
+$c3->depositar(500);
+$c3->verSaldo();
+$c3->sacar(3000);
+$c3->verSaldo();
 
 
 
