@@ -11,6 +11,10 @@ class Pessoa {
         $this->email = $email;
     }
 
+    public function ConsultaDados(){
+        echo "Nome :". $this->nome . " CPF: " . $this->cpf . " Email: " . $this->email . "<br>";
+    }
+
 }
 
 class Professor extends Pessoa {
@@ -27,6 +31,14 @@ class Professor extends Pessoa {
         $this->departamento = $departamento;
     }
 
+    public function AlteraSalario(float $valor){
+        $this->salario += $this->salario * $valor / 100 ;
+    }
+
+    public function ConsultaDados(){
+        parent::ConsultaDados();
+        echo "Matricula :". $this->matricula . " Carga Horaria: " . $this->cargaHoraria . " Salario: R$" . $this->salario . " Departamento: " . $this->departamento . "<br>";
+    }
 }
 
 class Funcionario extends Pessoa {
@@ -39,6 +51,15 @@ class Funcionario extends Pessoa {
         $this->matricula = $matricula;
         $this->regime = $regime;
         $this->salario = $salario;
+    }
+
+    public function AlteraSalario(float $valor){
+        $this->salario += $this->salario * $valor / 100 ;
+    }
+
+    public function ConsultaDados(){
+        parent::ConsultaDados();
+        echo "Matricula :". $this->matricula . " Regime: " . $this->regime . " Salario: R$" . $this->salario . "<br>";
     }
 }
 
@@ -53,10 +74,19 @@ class Aluno extends Pessoa {
         $this->curso = $curso;
         $this->termo = $termo;
     }
+
+    public function AlteraTermo(float $valor){
+        $this->termo = $valor ;
+    }
+
+    public function ConsultaDados(){
+        parent::ConsultaDados();
+        echo "RA :". $this->ra . " Curso: " . $this->curso . " Termo: " . $this->termo . "<br>";
+    }
 }
 
-
-
+$p1 = new Professor("Prof", "xxx.xxx.xxx-xx", "email@email.com", "10001", 30, 2000.00, "TI");
+$p1->ConsultaDados();
 
 
 
