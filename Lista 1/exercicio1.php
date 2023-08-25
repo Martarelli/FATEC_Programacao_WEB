@@ -11,10 +11,17 @@ class Invoice {
 
         $this->numeroItem = $numeroItem;
         $this->descricao = $descricao;
-        $this->qtdItemCompra = $qtdItemCompra;
-        $this->precoUnitario = $precoUnitario;
+
+        if ($qtdItemCompra < 0) {
+            $this->qtdItemCompra = 0;
+        } else {
+            $this->qtdItemCompra = $qtdItemCompra;
+        }
         
+        $this->precoUnitario = $precoUnitario;
+
     }
+
 
 
 
