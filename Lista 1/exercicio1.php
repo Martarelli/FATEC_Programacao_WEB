@@ -18,8 +18,11 @@ class Invoice {
             $this->qtdItemCompra = $qtdItemCompra;
         }
         
-        $this->precoUnitario = $precoUnitario;
-
+        if ($precoUnitario < 0) {
+            $this->precoUnitario = 0;
+        } else {
+            $this->precoUnitario = $precoUnitario;
+        }
     }
 
 
