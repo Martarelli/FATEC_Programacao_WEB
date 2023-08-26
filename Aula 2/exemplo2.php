@@ -1,5 +1,12 @@
 <?php
 
+trait Utils
+{
+    public function BuscaCep(){
+
+    }
+}
+
 class Conta
 {
     protected string $agencia;
@@ -47,6 +54,8 @@ class ContaPoupanca extends Conta {
 
 class ContaCorrente extends Conta {
 
+    use Utils;
+    
     private float $limite = 3000;
 
     public function __construct(string $agencia, string $conta, float $valor, float $limite){
