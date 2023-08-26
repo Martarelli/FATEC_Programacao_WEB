@@ -7,6 +7,13 @@ trait Utils
     }
 }
 
+static class Utils2()
+{
+    static function BuscaCep(){
+        echo "";
+    }
+}
+
 class Conta
 {
     protected string $agencia;
@@ -55,7 +62,7 @@ class ContaPoupanca extends Conta {
 class ContaCorrente extends Conta {
 
     use Utils;
-    
+
     private float $limite = 3000;
 
     public function __construct(string $agencia, string $conta, float $valor, float $limite){
@@ -103,7 +110,8 @@ $c3->verSaldo();
 $c3->sacar(3000);
 $c3->verSaldo();
 
-
+Utils2::BuscaCep();
+$c3->BuscaCep();
 
 
 
