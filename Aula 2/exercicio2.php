@@ -10,7 +10,14 @@ class Pessoa {
         $this->cpf = $cpf;
         $this->email = $email;
     }
+    
+    public function __set($atrib, $value){
+        $this->$atrib = $value;
+    }
 
+    public function __get($atrib){
+        return $this->$atrib;
+    }
     public function ConsultaDados(){
         echo "Nome :". $this->nome . " CPF: " . $this->cpf . " Email: " . $this->email . "<br>";
     }
