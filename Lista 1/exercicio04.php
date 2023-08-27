@@ -12,14 +12,9 @@ class Ponto2D {
     private int $x;
     private int $y;
 
-    public function __construct($x = null, $y = null){
-        if ($x === null || $y === null) {
-            $this->SetX(0);
-            $this->SetY(0);
-        } else {
+    public function __construct($x = 0, $y = 0){
             $this->SetX($x);
             $this->SetY($y);
-        }
     }
 
     public function GetX(){
