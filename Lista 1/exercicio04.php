@@ -8,6 +8,37 @@
     • Método que permita a criação de um novo ponto no mesmo local do ponto que recebeu a mensagem(clone).
  */
 
+class Ponto2D {
+    private int $x;
+    private int $y;
 
+    public function __construct($x = null, $y = null){
+        if ($x === null || $y === null) {
+            $this->SetX(0);
+            $this->SetY(0);
+        } else {
+            $this->SetX($x);
+            $this->SetY($y);
+        }
+    }
 
+    public function GetX(){
+        return $this->x;
+    }
+    public function SetX($x){
+        $this->x = $x;
+    }
+    public function GetY(){
+        return $this->y;
+    }
+    public function SetY($y){
+        $this->y = $y;
+    }
+}
+
+$p1 = new Ponto2D(1, 5);
+$p2 = new Ponto2D();
+
+echo "<p>".$p1->GetX().",".$p1->GetY()."</p>";
+echo "<p>".$p2->GetX().",".$p2->GetY()."</p>";
 ?>
