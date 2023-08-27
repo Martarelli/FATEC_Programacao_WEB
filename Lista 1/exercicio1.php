@@ -10,18 +10,18 @@ class Invoice {
     public function __construct(int $numeroItem, string $descricao, int $qtdItemCompra, float $precoUnitario){
 
         $this->SetNumeroItem($numeroItem);
-        $this->descricao = $descricao;
+        $this->SetDescricao($descricao);
 
         if ($qtdItemCompra < 0) {
-            $this->qtdItemCompra = 0;
+            $this->SetQtdItemCompra(0);
         } else {
-            $this->qtdItemCompra = $qtdItemCompra;
+            $this->SetQtdItemCompra($qtdItemCompra);
         }
 
         if ($precoUnitario < 0) {
-            $this->precoUnitario = 0;
+            $this->SetPrecoUnitario(0);
         } else {
-            $this->precoUnitario = $precoUnitario;
+            $this->SetPrecoUnitario($precoUnitario);
         }
     }
 
@@ -33,12 +33,46 @@ class Invoice {
         $this->numeroItem = $numeroItem;
     }
 
+    public function GetDescricao(){
+        return $this->descricao;
+    }
 
+    public function SetDescricao($descricao){
+        $this->descricao = $descricao;
+    }
+
+    public function GetQtdItemCompra(){
+        return $this->qtdItemCompra;
+    }
+
+    public function SetQtdItemCompra($qtdItemCompra){
+        $this->qtdItemCompra = $qtdItemCompra;
+    }
+
+    public function GetPrecoUnitario(){
+        return $this->precoUnitario;
+    }
+
+    public function SetPrecoUnitario($precoUnitario){
+        $this->precoUnitario = $precoUnitario;
+    }
+
+    public function GetInvoiceAmount(){
+       
+        $total = $this->GetPrecoUnitario() * $this->GetQtdItemCompra();
+        return $total;
+    }
 
 
 
 }
-$in1 = new Invoice(1, "Notebook", 1, 2500.00);
-echo $in1->GetNumeroItem();
+
+$in1 = new Invoice(1, "Notebook", 5, 2500.00);
+
+echo "<p>" . $in1->GetNumeroItem() . "<p>";
+echo "<p>" . $in1->GetDescricao(). "</p>";
+echo "<p>" . $in1->GetQtdItemCompra(). "</p>";
+echo "<p>" . $in1->GetPrecoUnitario(). "</p>";
+echo "<p>" . $in1->GetInvoiceAmount(). "</p>";
 
 ?>
