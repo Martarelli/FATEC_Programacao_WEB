@@ -7,7 +7,7 @@ trait Utils
     }
 }
 
-static class Utils2()
+class Utils2
 {
     static function BuscaCep(){
         echo "";
