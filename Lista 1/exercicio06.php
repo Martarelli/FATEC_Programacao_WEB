@@ -10,5 +10,40 @@ a data deve ser formatada mostrando o dia, o mês e o ano separados por barra
 (/).
 • Forneça uma operação para avançar uma data para o dia seguinte.  */
 
+class Datas {
+    private int $dia;
+    private int $mes;
+    private int $ano;
 
+    
+    public function getDia()
+    {
+        return $this->dia;
+    }
+
+    public function setDia($dia)
+    {
+        $this->dia = $dia;
+    }
+
+    public function getMes()
+    {
+        return $this->mes;
+    }
+
+    public function setMes($mes)
+    {
+        $this->mes = $mes;
+    }
+
+    public function getAno()
+    {
+        return $this->ano;
+    }
+
+    public function setAno($ano)
+    {
+        $this->ano = $ano;
+    }
+}
 ?>

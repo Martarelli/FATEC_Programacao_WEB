@@ -8,6 +8,6 @@ define( 'DB_NAME' , 'teste');
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "teste";
+$dbname = "agenda";
 
 ?>
