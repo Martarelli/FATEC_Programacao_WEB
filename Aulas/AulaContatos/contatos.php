@@ -1,15 +1,29 @@
 <?php
-require_once "header_inc.php";
+
 $nome= "";
 $email = "";
-$datanasc = ""
+$datanasc = "";
 
 if(isset($_POST['enviar'])){
 
     require_once('connection.php');
-
     
+    $nome = $_POST['nomeContato'];
+    $email = $_POST['emailContato'];
+    $datanasc = $_POST['datanascContato'];
+
+    $stmt = $conn->prepare("INSERT INTO contatos(nome, email, datanasc) VALUES (:nome, :email, :datanasc)");
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':datanasc', $datanasc);
+
+    $stmt->execute();
+
+    $conn = null;
 }
+
+require_once "header_inc.php";
+
 ?>
 <div class="p-4 mb-4 bg-light">
   <h1 class="display-5">Contatos</h1>
@@ -18,15 +32,6 @@ if(isset($_POST['enviar'])){
 </div>
 
 <div class="container">
-  <?php 
-    if (!is_null($flag_msg)) {
-      if ($flag_msg) {
-        echo "<div class='alert alert-success' role='alert'>$msg</div>"; 
-      }else{
-        echo "<div class='alert alert-warning' role='alert'>$msg</div>"; 
-      }
-    }
-  ?>
   <form method="POST">
     <div class="form-group">
       <label for="nomeContato">Nome:</label>
