@@ -33,8 +33,8 @@ $contatos = $stmt->fetchAll(PDO::FETCH_CLASS, "Contato");
       <td class="table-light" style="width:25%"><?= $ct->getEmail()?></td>
       <td class="table-light" style="width:15%"><?= $ct->getDatanasc()?></td>
       <td class="table-light" style="width:15%">
-        <a href=""><button type="button" class="btn btn-primary">Editar</button></a>
-        <a href=""><button type="button" class="btn btn-danger">Excluir</button>
+        <a href="contato-edit.php?id=<?= $ct->getId()?>"><button type="button" class="btn btn-primary">Editar</button></a>
+        <a href="contato-del.php?id=<?= $ct->getId()?>"><button type="button" class="btn btn-danger">Excluir</button>
       </td>
     </tr>
     <?php  } ?>
