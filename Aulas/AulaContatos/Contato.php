@@ -1,6 +1,6 @@
 <?php 
 
-class Contatos {
+class Contato {
     private int $id;
     private string $nome;
     private string $email;
