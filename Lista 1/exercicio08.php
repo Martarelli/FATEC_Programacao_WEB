@@ -13,5 +13,45 @@ class Pais{
     private string $capital;
     private string $dimensao;
     private array $fronteira;
+
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    public function setNome(string $nome)
+    {
+        $this->nome = $nome;
+    }
+
+    public function getCapital()
+    {
+        return $this->capital;
+    }
+
+    public function setCapital(string $capital)
+    {
+        $this->capital = $capital;
+    }
+
+    public function getDimensao()
+    {
+        return $this->dimensao;
+    }
+
+    public function setDimensao(string $dimensao)
+    {
+        $this->dimensao = $dimensao;
+    }
+
+    public function getFronteira()
+    {
+        return $this->fronteira;
+    }
+
+    public function adicionarFronteira(Pais $pais)
+    {
+        $this->fronteira[] = $pais;
+    }
 }
 ?>
