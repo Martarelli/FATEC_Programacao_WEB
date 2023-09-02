@@ -53,5 +53,14 @@ class Pais{
     {
         $this->fronteira[] = $pais;
     }
+
+    public function isEqual(Pais $pais)
+    {
+        if($this->getNome() == $pais->getNome() && $this->getCapital() == $pais->getCapital())
+        {
+            return "É o mesmo País";
+        }
+        return "Não é o mesmo País";
+    }
 }
 ?>
