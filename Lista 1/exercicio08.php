@@ -8,5 +8,10 @@
     • Um método que retorne a lista de países que fazem fronteira;
     • Um método que receba um outro país como parâmetro e retorne uma lista de vizinhos comuns aos dois países. */
 
-
+class Pais{
+    private string $nome;
+    private string $capital;
+    private string $dimensao;
+    private array $fronteira;
+}
 ?>
