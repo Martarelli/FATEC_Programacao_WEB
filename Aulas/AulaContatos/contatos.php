@@ -45,7 +45,7 @@ require_once "header_inc.php";
     <br />
     <div class="form-group">
       <label for="emailContato">Email:</label>
-      <input type="email" class="form-control" id="emailContato" name="emailContato" value="<?= $email; ?>">
+      <input type="email" class="form-control mb-3" id="emailContato" name="emailContato" value="<?= $email; ?>">
     </div>
     <button type="submit" class="btn btn-primary mb-2" name="enviar">Enviar</button>
     <a href="contatos.php"><button type="button" class="btn btn-primary mb-2" name="limpar">Limpar</button></a>
