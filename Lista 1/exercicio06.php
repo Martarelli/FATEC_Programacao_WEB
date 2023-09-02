@@ -1,7 +1,7 @@
 <?php 
 
-/* Exercício 06: Crie uma classe para representar datas. Represente uma data usando três
-atributos: o dia, o mês, e o ano.
+/* Exercício 06: Crie uma classe para representar datas. 
+Represente uma data usando três atributos: o dia, o mês, e o ano.
 • Sua classe deve ter um construtor que inicializa os três atributos e verifica a
 validade dos valores fornecidos.
 • Forneça um método set um get para cada atributo.
@@ -15,6 +15,19 @@ class Datas {
     private int $mes;
     private int $ano;
 
+    public function __construct(int $dia = 1, int $mes = 1, int $ano = 2023){
+        if($dia >= 1 && $dia <= 31){
+            $this->setDia($dia);
+        }
+
+        if($mes >= 1 && $mes <= 12){
+            $this->setDia($mes);
+        }
+
+        if($ano >= 1 && $ano <= 9999){
+            $this->setDia($ano);
+        }
+    }
     
     public function getDia()
     {
@@ -45,5 +58,7 @@ class Datas {
     {
         $this->ano = $ano;
     }
+
+
 }
 ?>
