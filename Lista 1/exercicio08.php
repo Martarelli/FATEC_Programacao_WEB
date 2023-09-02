@@ -11,8 +11,15 @@
 class Pais{
     private string $nome;
     private string $capital;
-    private string $dimensao;
-    private array $fronteira;
+    private float $dimensao;
+    private array $fronteira = [];
+
+    public function __construct(string $nome, string $capital, float $dimensao) 
+    {
+        $this->setNome($nome);
+        $this->setCapital($capital);
+        $this->setDimensao($dimensao);
+    }
 
     public function getNome()
     {
@@ -39,7 +46,7 @@ class Pais{
         return $this->dimensao;
     }
 
-    public function setDimensao(string $dimensao)
+    public function setDimensao(float $dimensao)
     {
         $this->dimensao = $dimensao;
     }
@@ -51,16 +58,48 @@ class Pais{
 
     public function adicionarFronteira(Pais $pais)
     {
-        $this->fronteira[] = $pais;
+        if(!$this->isEqual($pais))
+        {
+            $this->fronteira[] = $pais;
+        }
     }
 
     public function isEqual(Pais $pais)
     {
-        if($this->getNome() == $pais->getNome() && $this->getCapital() == $pais->getCapital())
+        return ($this->getNome() == $pais->getNome() && $this->getCapital() == $pais->getCapital());
+    }
+
+    public function vizinhosComuns(Pais $pais) 
+    {
+        foreach ($this->getFronteira() as $paisFronteira) 
         {
-            return "É o mesmo País";
+            if (in_array($paisFronteira, $pais->getFronteira())) 
+            {
+                echo "<p>" . $paisFronteira->getNome(). "</p>";
+            }
         }
-        return "Não é o mesmo País";
     }
 }
+
+$p1 = new Pais("País 1", "Capital 1", 1000.34);
+$p2 = new Pais("País 2", "Capital 2", 2000.34);
+$p3 = new Pais("País 3", "Capital 3", 3000.34);
+$p4 = new Pais("País 4", "Capital 4", 4000.34);
+$p5 = new Pais("País 5", "Capital 5", 5000.34);
+$p6 = new Pais("País 6", "Capital 6", 6000.34);
+
+echo  "<h3>País 1</h3>";
+$p1->adicionarFronteira($p1);
+$p1->adicionarFronteira($p2);
+$p1->adicionarFronteira($p3);
+$p1->adicionarFronteira($p6);
+
+$p2->adicionarFronteira($p1);
+$p2->adicionarFronteira($p3);
+$p2->adicionarFronteira($p4);
+$p2->adicionarFronteira($p5);
+$p2->adicionarFronteira($p6);
+echo  "<p>Fronteiras em comum com o Pais 2:</p>";
+$p1->vizinhosComuns($p2);
+
 ?>
