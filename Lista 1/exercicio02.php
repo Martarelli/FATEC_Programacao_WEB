@@ -12,7 +12,8 @@ class Empregado {
     private string $sobrenome;
     private float $salario;
 
-    public function __construct(string $nome, string $sobrenome, float $salario){
+    public function __construct(string $nome, string $sobrenome, float $salario)
+    {
         $this->SetNome($nome);
         $this->SetSobrenome($sobrenome);
 
@@ -37,24 +38,34 @@ class Empregado {
         $this->sobrenome = $sobrenome;
     }
 
-    public function GetSalario(){
+    public function GetSalario()
+    {
         return $this->salario;
     }
-    public function SetSalario($salario){
+    public function SetSalario($salario)
+    {
         $this->salario = $salario;
     }
 
-    public function Aumento(){
+    public function Aumento()
+    {
         $newSalario = $this->GetSalario() * 1.1;
         $this->SetSalario($newSalario);
         return $this->GetSalario();
     }
+
+    public function SalarioAnual()
+    {
+        return $this->GetSalario() * 12;
+    }
 }
 
 $func1 = new Empregado("Renan", "Martarelli", 1000.00);
-echo "<p>". $func1->GetNome() . "</p>";
-echo "<p>". $func1->GetSobrenome() . "</p>";
-echo "<p>". $func1->GetSalario() . "</p>";
-echo "<p>". $func1->Aumento() . "</p>";
+echo "<p>Nome: ". $func1->GetNome() . "</p>";
+echo "<p>Sobrenome: ". $func1->GetSobrenome() . "</p>";
+echo "<p> Salário Atual: R$". $func1->GetSalario() . "</p>";
+echo "<p> Salário Anual: R$". $func1->SalarioAnual() . "</p>";
+echo "<p> Salário Aumento: R$". $func1->Aumento() . "</p>";
+echo "<p> Salário Anual Aumento: R$". $func1->SalarioAnual() . "</p>";
 
 ?>
