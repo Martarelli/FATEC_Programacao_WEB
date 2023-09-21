@@ -49,45 +49,7 @@ class Curso {
     public function setDataCadastro($dataCadastro) {
         $this->dataCadastro = $dataCadastro;
     }
-
-    // Métodos CRUD
-    public function salvar() {
-        require('connection.php');
-        $sql = "INSERT INTO cursos (nome, descricao, imagem, dataCadastro) VALUES (?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        
-        $stmt->bindParam(1, $this->nome);
-        $stmt->bindParam(2, $this->descricao);
-        $stmt->bindParam(3, $this->imagem);
-        $stmt->bindParam(4, $this->dataCadastro);
-        
-        return $stmt->execute();
-    }
-
-    public function atualizar() { 
-        require('connection.php');
-        $sql = "UPDATE cursos SET nome=?, descricao=?, imagem=?, dataCadastro=? WHERE id=?";
-        $stmt = $conn->prepare($sql);
-        
-        $stmt->bindParam(1, $this->nome);
-        $stmt->bindParam(2, $this->descricao);
-        $stmt->bindParam(3, $this->imagem);
-        $stmt->bindParam(4, $this->dataCadastro);
-        $stmt->bindParam(5, $this->id);
-        
-        return $stmt->execute();
-    }
-
-    public function excluir() {
-        require('connection.php');
-        $sql = "DELETE FROM cursos WHERE id=?";
-        $stmt = $conn->prepare($sql);
-        
-        $stmt->bindParam(1, $this->id);
-        
-        return $stmt->execute();
-    }
-
+    
     public static function buscarPorId($id) {
         require('connection.php');
         $sql = "SELECT * FROM cursos WHERE id=?";
