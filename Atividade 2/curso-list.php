@@ -34,7 +34,7 @@ $cursos = Curso::listarCursos();
       <td class="table-light"> <?= $curso->getDescricao()?> </td>
       <td class="table-light"> <?= $curso->getImagem()?> </td>
       <td class="table-light" style="width: 15%">
-        <a href="curso-show.php?id=<?= $curso->getId(); ?>"><button type="button" class="btn btn-primary">Exibir</button></a>
+        <a href="curso-update.php?id=<?= $curso->getId(); ?>"><button type="button" class="btn btn-primary">Editar</button></a>
         <a href="curso-destroy.php?id=<?= $curso->getId(); ?>"><button type="button" class="btn btn-danger">Excluir</button></a>
       </td>
     </tr>
