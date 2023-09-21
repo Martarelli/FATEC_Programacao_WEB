@@ -29,7 +29,7 @@ $cursos = Curso::listarCursos();
     </div>
     <div class="col-md-5">
       <figure class="figure">
-          <img src=<?= $curso->getImagem()?> class="figure-img img-fluid rounded" alt="Curso de PHP">
+          <img src="<?= $curso->getImagem()?>" class="figure-img img-fluid rounded" alt="Curso de PHP">
       </figure>
     </div>
   </div>
