@@ -21,11 +21,6 @@ class App
         $this->url();
     }
 
-    public function url ()
-    {
-        
-    }
-
     /**
      * Get the value of controller
      */
@@ -65,7 +60,23 @@ class App
     {
         return $this->controllerName;
     }
+
+    public function url ()
+    {
+        
+    }
+    public function run ()
+    {
+        
+    }
+    public function verificaArray ($array, $key)
+    {
+        if(isset($array[$key]) && !empty($array[$key]))
+        {
+            return $array[$key];
+        }
+        return null;
+    }
+
 }
-
-
 ?>
