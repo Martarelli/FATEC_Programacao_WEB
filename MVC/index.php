@@ -12,6 +12,6 @@ try {
     $app = new App();
     $app->run();
 } catch (\Exception $e) {
-    // $oError = new Error($e);
-    // $oError->render();
+    $oError = new Error($e);
+    $oError->render();
 }
