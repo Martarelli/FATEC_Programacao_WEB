@@ -81,10 +81,47 @@ class App
             }
         }
     }
-    public function run ()
+
+    public function run() 
     {
+        if ($this->controller) {
+            $this->controllerName = ucwords($this->controller) . 'Controller';
+            $this->controllerName = preg_replace('/[^a-zA-Z]/i', '', $this->controllerName);
+        } else {
+            $this->controllerName = "HomeController";
+        }
+
+        $this->controllerFile   = $this->controllerName . '.php';
+        $this->action           = preg_replace('/[^a-zA-Z]/i', '', $this->action);
+
+        if (!$this->controller) {
+            $this->controller = new HomeController($this);
+            $this->controller->index();
+        }
+
+        if (!file_exists(PATH . '/App/Controllers/' . $this->controllerFile)) {
+            throw new Exception("Página não encontrada.", 404);
+        }
+
+        $nomeClasse     = "\\App\\Controllers\\" . $this->controllerName;
+        $objetoController = new $nomeClasse($this);
+
+        if (!class_exists($nomeClasse)) {
+            throw new Exception("Erro na aplicação", 500);
+        }
         
+        if (method_exists($objetoController, $this->action)) {
+            $objetoController->{$this->action}($this->params);
+            return;
+        } else if (!$this->action && method_exists($objetoController, 'index')) {
+            $objetoController->index($this->params);
+            return;
+        } else {
+            throw new Exception("Nosso suporte já esta verificando desculpe!", 500);
+        }
+        throw new Exception("Página não encontrada.", 404);
     }
+
     public function verificaArray ($array, $key)
     {
         if(isset($array[$key]) && !empty($array[$key]))
