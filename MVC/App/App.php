@@ -1,4 +1,9 @@
 <?php 
+
+namespace App;
+
+use App\Controllers\HomeController;
+
 class App
 {
     private $controller;
