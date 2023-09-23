@@ -61,9 +61,25 @@ class App
         return $this->controllerName;
     }
 
-    public function url ()
+    public function url() 
     {
-        
+        if ( isset( $_GET['url'] ) ) {
+
+            $path = $_GET['url'];
+            $path = rtrim($path, '/');
+            $path = filter_var($path, FILTER_SANITIZE_URL); 
+
+            $path = explode('/', $path);
+
+            $this->controller  = $this->verificaArray( $path, 0 );
+            $this->action      = $this->verificaArray( $path, 1 );
+
+            if ( $this->verificaArray( $path, 2 ) ) {
+                unset( $path[0] );
+                unset( $path[1] );
+                $this->params = array_values( $path );
+            }
+        }
     }
     public function run ()
     {
