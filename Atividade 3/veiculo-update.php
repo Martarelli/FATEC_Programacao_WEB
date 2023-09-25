@@ -100,7 +100,7 @@ if(isset($_POST['enviar'])){
     <br />
 
     <div class="form-group">
-      <label for="cor">cor:</label>
+      <label for="cor">Cor:</label>
       <input type="text" class="form-control" id="cor" name="cor" value="<?= $cor; ?>">
     </div>
     <br />
