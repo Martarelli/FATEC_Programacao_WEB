@@ -29,8 +29,8 @@
               Área Administrativa
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="curso-list.php">Gerenciamento de Veículos</a></li>
-              <li><a class="dropdown-item" href="contato-list.php">Gerenciamento de Vendedores</a></li>
+              <li><a class="dropdown-item" href="veiculo-list.php">Gerenciamento de Veículos</a></li>
+              <li><a class="dropdown-item" href="vendedor-list.php">Gerenciamento de Vendedores</a></li>
             </ul>
           </li>
         </ul>
