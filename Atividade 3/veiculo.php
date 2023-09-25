@@ -102,7 +102,7 @@ class Veiculo {
     }
 
     public static function listarVeiculos() {
-        require_once 'connection.php';
+        require 'connection.php';
         
         $query = "SELECT * FROM veiculos";
         $stmt = $conn->query($query);
@@ -128,7 +128,7 @@ class Veiculo {
     }
 
     public static function listarVeiculoPorId($id) {
-        require_once 'connection.php';
+        require 'connection.php';
         
         $query = "SELECT * FROM veiculos WHERE id = :id";
         $stmt = $conn->prepare($query);
