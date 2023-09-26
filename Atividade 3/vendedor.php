@@ -27,7 +27,6 @@ class Vendedor {
         return $this->telefone;
     }
 
-    
     public function setId($id) {
         $this->id = $id;
     }
