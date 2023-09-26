@@ -14,7 +14,7 @@ $vendedor = Vendedor::listarVendedores();
 </div>
 
 <div class="container" style="max-width: 100%;">
-  <a class="btn btn-success" href="veiculo-create.php">Criar Novo Vendedor</a>
+  <a class="btn btn-success" href="vendedor-create.php">Criar Novo Vendedor</a>
   <p></p>
   <table class="table table-bordered">
     <tr class="table-success text-center text-center">
