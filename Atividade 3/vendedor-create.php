@@ -16,7 +16,7 @@ if(isset($_POST['enviar'])){
         empty($_POST["telefone"])) 
     {
         $flag_msg = false; //Erro 
-        $msg = "Dados incompletos, preencha o formulário co rretamente!";
+        $msg = "Dados incompletos, preencha o formulário corretamente!";
     } else {
         $nome = $_POST["nome"];
         $email = $_POST["email"];
