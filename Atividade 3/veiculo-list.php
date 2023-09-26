@@ -48,7 +48,6 @@ $veiculos = Veiculo::listarVeiculos();
     </tr>
     <?php  }?>
   </table>
-  <img src="https://imgbox.com/pp1SFsMS" alt="">
 </div>
 
 <?php require_once "footer_inc.php"; ?>
