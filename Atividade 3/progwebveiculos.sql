@@ -36,3 +36,18 @@ VALUES ('Chevrolet', 'Cruze', 'Vermelho', 2021, 2021, 'Gasolina', 88000.00, 'Cru
 
 INSERT INTO veiculos (marca, modelo, cor, anoFabricacao, anoModelo, combustivel, preco, detalhes, foto)
 VALUES ('Volkswagen', 'Golf', 'Azul', 2016, 2017, 'Gasolina', 76000.00, 'Golf em excelente estado.', 'img/golf2016.jpg');
+
+INSERT INTO vendedores (nome, email, telefone)
+VALUES ('Renan Martarelli', 'martarelli@example.com', '999992030');
+
+INSERT INTO vendedores (nome, email, telefone)
+VALUES ('Gabriela Souza', 'souza@example.com', '997852030');
+
+INSERT INTO vendedores (nome, email, telefone)
+VALUES ('João Santos', 'santos@example.com', '999553630');
+
+INSERT INTO vendedores (nome, email, telefone)
+VALUES ('Mariazinha', 'maria@example.com', '955363030');
+
+INSERT INTO vendedores (nome, email, telefone)
+VALUES ('Pedro Henrique', 'henrique@example.com', '991257630');
