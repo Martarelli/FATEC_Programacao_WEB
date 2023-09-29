@@ -1,17 +1,18 @@
 <?php
+
 use App\App;
-use App\lib\Error;
+use App\Lib\Erro;
 
 session_start();
 
-error_reporting(E_ALL & ~E_NOTICE ^E_DEPRECATED);
+error_reporting(E_ALL & ~E_NOTICE ^ E_DEPRECATED);
 
-require_once('vendor/autoload.php');
+require_once("vendor/autoload.php");
 
 try {
     $app = new App();
     $app->run();
-} catch (\Exception $e) {
-    $oError = new Error($e);
+}catch (\Exception $e) {
+    $oError = new Erro($e);
     $oError->render();
 }

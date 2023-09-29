@@ -1,10 +1,10 @@
 <?php
 namespace App\Controllers;
+
 class HomeController extends Controller
 {
-    public function index() 
+    public function index()
     {
-        // $this-render('home/index');
+        //$this->render('home/index');
     }
 }
-?>

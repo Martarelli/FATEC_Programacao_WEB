@@ -1,5 +1,5 @@
 {
-    "name": "renanmartarelli/mvc-exemplo",
+    "name": "ptacca/mvc-exemplo",
     "description": "Exemplo de MVC",
     "autoload": {
         "psr-4": {
@@ -8,8 +8,8 @@
     },
     "authors": [
         {
-            "name": "Renan Martarelli",
-            "email": "renanmartarelli@gmail.com"
+            "name": "Paulo Tacca",
+            "email": "ptacca@gmail.com"
         }
     ],
     "require": {
