@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS Tasks_RenanMartarelli;
 
 CREATE DATABASE Tasks_RenanMartarelli;
+USE Tasks_RenanMartarelli;
 
 CREATE TABLE IF NOT EXISTS Status (
     id INT PRIMARY KEY,
