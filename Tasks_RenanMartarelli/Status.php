@@ -58,7 +58,7 @@ class Status {
             $st[] = $status;
         }
 
-        return $veiculos;
+        return $st;
     }
 
     public static function listarStatusPorId($id) {
