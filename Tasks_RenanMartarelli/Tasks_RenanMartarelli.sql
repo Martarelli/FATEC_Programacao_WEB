@@ -6,7 +6,7 @@ USE Tasks_RenanMartarelli;
 CREATE TABLE IF NOT EXISTS Status (
     id INT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    ordem VARCHAR(255) NOT NULL
+    ordem INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Tarefas (
@@ -21,3 +21,5 @@ CREATE TABLE IF NOT EXISTS Tarefas (
     status_id INT,
     FOREIGN KEY (status_id) REFERENCES Status(id)
 );
+
+INSERT INTO Status (nome, ordem) VALUES ()
