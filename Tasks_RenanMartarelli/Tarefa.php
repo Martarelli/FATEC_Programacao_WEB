@@ -113,7 +113,7 @@ class Tarefa {
         $this->status_id = $status_id;
     }
 
-    public static function listarTaredas() {
+    public static function listarTarefas() {
         require 'connection.php';
 
         $query = "SELECT tarefas.* FROM tarefas INNER JOIN Status ON Tarefas.status_id = Status.id ORDER BY Status.id";
