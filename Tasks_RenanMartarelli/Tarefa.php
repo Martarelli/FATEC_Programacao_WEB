@@ -136,7 +136,7 @@ class Tarefa {
             $tarefas[] = $tarefa;
         }
 
-        return $veiculos;
+        return $tarefas;
     }
 
     public static function listarTarefaPorId($id) {
