@@ -1,10 +1,11 @@
 DROP DATABASE IF EXISTS Tasks_RenanMartarelli;
 
 CREATE DATABASE Tasks_RenanMartarelli;
+
 USE Tasks_RenanMartarelli;
 
 CREATE TABLE IF NOT EXISTS Status (
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     ordem INT NOT NULL
 );
@@ -22,4 +23,6 @@ CREATE TABLE IF NOT EXISTS Tarefas (
     FOREIGN KEY (status_id) REFERENCES Status(id)
 );
 
-INSERT INTO Status (nome, ordem) VALUES ()
+INSERT INTO Status (nome, ordem) VALUES ("Todo", 1);
+INSERT INTO Status (nome, ordem) VALUES ("Doing", 2);
+INSERT INTO Status (nome, ordem) VALUES ("Done", 3);
