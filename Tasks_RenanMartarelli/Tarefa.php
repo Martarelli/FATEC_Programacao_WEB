@@ -115,8 +115,8 @@ class Tarefa {
 
     public static function listarTaredas() {
         require 'connection.php';
-        
-        $query = "SELECT * FROM tarefas";
+
+        $query = "SELECT tarefas.* FROM tarefas INNER JOIN Status ON Tarefas.status_id = Status.id ORDER BY Status.id";
         $stmt = $conn->query($query);
         $tarefas = [];
 
