@@ -3,12 +3,10 @@
 class Status {
     private $id;
     private $nome;
-    private $ordem; 
 
-    public function __construct($id, $nome, $ordem) {
+    public function __construct($id, $nome) {
         $this->setId($id);
         $this->setNome($nome);
-        $this->setOrdem($ordem);
     }
 
     public function getId()
@@ -31,15 +29,6 @@ class Status {
         $this->nome = $nome;
     }
 
-    public function getOrdem()
-    {
-        return $this->ordem;
-    }
-
-    public function setOrdem($ordem)
-    {
-        $this->ordem = $ordem;
-    }
 
     public static function listarStatus() {
         require 'connection.php';
@@ -52,7 +41,6 @@ class Status {
             $status = new Status(
                 $row['id'],
                 $row['nome'],
-                $row['ordem']
             );
 
             $st[] = $status;
@@ -75,7 +63,6 @@ class Status {
             return new Status(
                 $row['id'],
                 $row['nome'],
-                $row['ordem']
             );
         }
         return null; 
