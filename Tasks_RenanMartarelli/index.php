@@ -31,8 +31,8 @@ $tarefas = Tarefa::listarTarefas();
       <td class="table-light"> <?= $tarefa->getTitulo()?> </td>
       <td class="table-light"> <?= $tarefa->getDescricao()?> </td>
       <td class="table-light" style="background-color: <?= $tarefa->getPrioridade()?>; width: 5%"></td>
-      <td class="table-light" style="width: 10%"> <?= $tarefa->getDataInicio()?> </td>
-      <td class="table-light" style="width: 10%"> <?= $tarefa->getDataConclusao()?> </td>
+      <td class="table-light" style="width: 10%"> <?= date("d/m/Y", strtotime($tarefa->getDataInicio()))?> </td>
+      <td class="table-light" style="width: 10%"> <?= date("d/m/Y", strtotime($tarefa->getDataConclusao()))?> </td>
       <td class="table-light" style="width: 18%">
         <a href="tarefa-done.php?id=<?= $tarefa->getId(); ?>"><button type="button" class="btn btn-dark">Concluir</button></a>
         <a href="tarefa-update.php?id=<?= $tarefa->getId(); ?>"><button type="button" class="btn btn-primary">Editar</button></a>
