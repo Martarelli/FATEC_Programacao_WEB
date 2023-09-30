@@ -4,7 +4,7 @@ require_once 'connection.php';
 require_once 'Tarefa.php';
 require_once 'Status.php';
 
-$tarefas = Tarefa::listarTaredas()
+$tarefas = Tarefa::listarTarefas();
 ?>
 <div class="p-4 mb-4 bg-light">
   <h1 class="display-5">Gerenciamento de Tasks</h1>
@@ -13,35 +13,30 @@ $tarefas = Tarefa::listarTaredas()
 </div>
 
 <div class="container" style="max-width: 100%;">
-  <a class="btn btn-dark" href="veiculo-create.php">Nova Task</a>
+  <a class="btn btn-dark" href="tarefa-create.php">Nova Task</a>
   <p></p>
   <table class="table table-bordered">
-    <tr class="table-success text-center text-center">
+    <tr class="table-dark text-center text-center">
       <th>#</th>
-      <th>Marca</th>
-      <th>Modelo</th>
-      <th>Cor</th>
-      <th>Ano Fabricação</th>
-      <th>Ano Modelo</th>
-      <th>Combustível</th>
-      <th>Detalhes</th>
-      <th>Foto</th>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th>Prioridade</th>
+      <th>Data Inicio</th>
+      <th>Data Conclusão</th>
       <th>Ação</th>
     </tr>
-    <?php foreach ($veiculos as $veiculo) { ?>
+    <?php foreach ($tarefas as $tarefa) { ?>
     <tr class="text-center">
-      <td class="table-light"> <?= $veiculo->getId()?> </td>
-      <td class="table-light"> <?= $veiculo->getMarca()?> </td>
-      <td class="table-light"> <?= $veiculo->getModelo()?> </td>
-      <td class="table-light"> <?= $veiculo->getCor()?> </td>
-      <td class="table-light"> <?= $veiculo->getAnoFabricacao()?> </td>
-      <td class="table-light"> <?= $veiculo->getAnoModelo()?> </td>
-      <td class="table-light"> <?= $veiculo->getCombustivel()?> </td>
-      <td class="table-light"> <?= $veiculo->getDetalhes()?> </td>
-      <td class="table-light"> <?= $veiculo->getFoto()?> </td>
-      <td class="table-light" style="width: 15%">
-        <a href="veiculo-update.php?id=<?= $veiculo->getId(); ?>"><button type="button" class="btn btn-primary">Editar</button></a>
-        <a href="veiculo-destroy.php?id=<?= $veiculo->getId(); ?>"><button type="button" class="btn btn-danger">Excluir</button></a>
+      <td class="table-light" style="width: 3%"> <?= $tarefa->getId()?> </td>
+      <td class="table-light"> <?= $tarefa->getTitulo()?> </td>
+      <td class="table-light"> <?= $tarefa->getDescricao()?> </td>
+      <td class="table-light" style="background-color: <?= $tarefa->getPrioridade()?>; width: 5%"></td>
+      <td class="table-light" style="width: 10%"> <?= $tarefa->getDataInicio()?> </td>
+      <td class="table-light" style="width: 10%"> <?= $tarefa->getDataConclusao()?> </td>
+      <td class="table-light" style="width: 18%">
+        <a href="tarefa-done.php?id=<?= $tarefa->getId(); ?>"><button type="button" class="btn btn-dark">Concluir</button></a>
+        <a href="tarefa-update.php?id=<?= $tarefa->getId(); ?>"><button type="button" class="btn btn-primary">Editar</button></a>
+        <a href="tarefa-destroy.php?id=<?= $tarefa->getId(); ?>"><button type="button" class="btn btn-danger">Excluir</button></a>
       </td>
     </tr>
     <?php  }?>
