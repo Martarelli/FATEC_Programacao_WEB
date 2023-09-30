@@ -111,7 +111,7 @@ if(isset($_POST['enviar'])){
     <div class="form-group">
       <label for="prioridade">Prioridade:</label>
       <select class="form-select" id="prioridade" name="prioridade">
-        <option <?= $prioridadeSelectedGreen ?>value="green">Verde</option>
+        <option <?= $prioridadeSelectedGreen ?> value="green">Verde</option>
         <option <?= $prioridadeSelectedRed ?> value="red">Vermelho</option>
         <option <?= $prioridadeSelectedYellow ?> value="yellow">Amarelo</option>
       </select>   
