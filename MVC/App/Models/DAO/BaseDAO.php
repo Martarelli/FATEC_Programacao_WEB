@@ -42,7 +42,18 @@ abstract class BaseDAO {
 
     public function update($table, $cols, $values, $where = null)
     {
+        if(!empty($table) && !empty($cols) && !empty($values)){
+            if($where){
+                $where = " WHERE $where ";
+            }
 
+            $stmt = $this->conexao-prepare("UPDATE $table SET $cols $where");
+            $stmt->execute($values);
+
+            return $stmt->rowCount();
+        } else {
+            return false;
+        }
     }
 
     public function delete($table, $where = null)
