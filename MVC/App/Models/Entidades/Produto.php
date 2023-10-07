@@ -3,6 +3,7 @@
 namespace App\Models\Entidades;
 
 use DateTime;
+use App\Models\Entidades\Fornecedor;
 
 class Produto 
 {
@@ -14,6 +15,11 @@ class Produto
     private string $dataCadastro;
     private string $imagem;
     private Fornecedor $fornecedor;
+
+    public function __construct()
+    {
+        $this->fornecedor = new Fornecedor();
+    }
 
     public function getId()
     {
