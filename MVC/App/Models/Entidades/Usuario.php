@@ -81,15 +81,12 @@ class Usuario {
         return $this;
     }
 
-    public function getDataCadastro()
-    {
-        return $this->data_cadastro;
+    public function getDataCadastro() : DateTime {
+        return new DateTime($this->dataCadastro);
     }
 
-    public function setDataCadastro($data_cadastro): self
+    public function setDataCadastro(string $dataCadastro)
     {
-        $this->data_cadastro = $data_cadastro;
-
-        return $this;
+        $this->dataCadastro = $dataCadastro;
     }
 }
